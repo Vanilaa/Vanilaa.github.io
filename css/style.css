@@ -1,15 +1,18 @@
 /* ===== Root Variables ===== */
 :root {
-    --primary-color: #00ff00;
-    --secondary-color: #ff00ff;
-    --accent-color: #00ffff;
-    --bg-dark: #0a0a0a;
-    --bg-darker: #050505;
-    --text-light: #ffffff;
-    --text-gray: #888888;
-    --pixel-size: 4px;
-    --border-pixel: 2px;
-    --animation-speed: 0.3s;
+    --primary-color: #27AE60;
+    /* Forest green */
+    --secondary-color: #E67E22;
+    /* Autumn orange */
+    --accent-color: #F1C40F;
+    /* Sunflower yellow */
+    --bg-dark: #FDFEFE;
+    /* Off-white (light theme) */
+    --bg-darker: #cbd7ff;
+    /* Light gray */
+    --text-light: #2C3E50;
+    /* Dark text */
+    --text-gray: #7F8C8D;
 }
 
 /* ===== Global Styles ===== */
@@ -43,7 +46,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--bg-darker);
+    background: var(--bg-dark);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,17 +94,35 @@ body {
 }
 
 @keyframes loadProgress {
-    to { width: 100%; }
+    to {
+        width: 100%;
+    }
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 @keyframes blink {
-    0%, 50%, 100% { opacity: 1; }
-    25%, 75% { opacity: 0.5; }
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0.5;
+    }
 }
 
 /* ===== Navigation ===== */
@@ -109,7 +130,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(10, 10, 10, 0.95);
+    background: var(--bg-darker);
     backdrop-filter: blur(10px);
     border-bottom: var(--border-pixel) solid var(--primary-color);
     z-index: 1000;
@@ -221,7 +242,7 @@ body {
 .glitch {
     position: relative;
     color: var(--primary-color);
-    text-shadow: 
+    text-shadow:
         2px 2px 0px var(--secondary-color),
         -2px -2px 0px var(--accent-color);
     animation: glitch 2s infinite;
@@ -250,25 +271,67 @@ body {
 }
 
 @keyframes glitch {
-    0%, 100% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
 }
 
 @keyframes glitch-1 {
-    0%, 100% { clip-path: inset(0 0 0 0); }
-    25% { clip-path: inset(20% 0 30% 0); }
-    50% { clip-path: inset(50% 0 20% 0); }
-    75% { clip-path: inset(10% 0 60% 0); }
+
+    0%,
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    25% {
+        clip-path: inset(20% 0 30% 0);
+    }
+
+    50% {
+        clip-path: inset(50% 0 20% 0);
+    }
+
+    75% {
+        clip-path: inset(10% 0 60% 0);
+    }
 }
 
 @keyframes glitch-2 {
-    0%, 100% { clip-path: inset(0 0 0 0); }
-    25% { clip-path: inset(60% 0 10% 0); }
-    50% { clip-path: inset(30% 0 40% 0); }
-    75% { clip-path: inset(80% 0 5% 0); }
+
+    0%,
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    25% {
+        clip-path: inset(60% 0 10% 0);
+    }
+
+    50% {
+        clip-path: inset(30% 0 40% 0);
+    }
+
+    75% {
+        clip-path: inset(80% 0 5% 0);
+    }
 }
 
 /* Typewriter Effect */
@@ -279,19 +342,31 @@ body {
     overflow: hidden;
     white-space: nowrap;
     border-right: 3px solid var(--primary-color);
-    animation: 
+    animation:
         typewriter 3s steps(30, end),
         blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
 }
 
 @keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: var(--primary-color); }
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--primary-color);
+    }
 }
 
 .hero-buttons {
@@ -397,13 +472,27 @@ body {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(10px); }
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
 }
 
 @keyframes wheel {
-    0% { top: 10px; opacity: 1; }
-    100% { top: 25px; opacity: 0; }
+    0% {
+        top: 10px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 25px;
+        opacity: 0;
+    }
 }
 
 /* ===== Sections ===== */
@@ -428,13 +517,11 @@ section {
 .pixel-border {
     width: 100px;
     height: var(--pixel-size);
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--primary-color) 20%,
-        var(--primary-color) 80%,
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            var(--primary-color) 20%,
+            var(--primary-color) 80%,
+            transparent);
     margin: 0 auto;
 }
 
@@ -472,7 +559,7 @@ section {
     border: var(--pixel-size) solid var(--primary-color);
     position: relative;
     background: var(--bg-darker);
-    box-shadow: 
+    box-shadow:
         0 0 0 var(--pixel-size) var(--bg-dark),
         0 0 0 calc(var(--pixel-size) * 2) var(--primary-color);
 }
@@ -481,16 +568,21 @@ section {
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    clip-path: polygon(
-        30% 20%, 70% 20%, 70% 40%, 80% 40%, 80% 80%, 
-        20% 80%, 20% 40%, 30% 40%
-    );
+    clip-path: polygon(30% 20%, 70% 20%, 70% 40%, 80% 40%, 80% 80%,
+            20% 80%, 20% 40%, 30% 40%);
     animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /* ===== Team Section ===== */
@@ -522,12 +614,10 @@ section {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent,
-        var(--primary-color),
-        transparent
-    );
+    background: linear-gradient(45deg,
+            transparent,
+            var(--primary-color),
+            transparent);
     transform: rotate(45deg);
     opacity: 0;
     transition: opacity var(--animation-speed);
@@ -539,8 +629,13 @@ section {
 }
 
 @keyframes shimmer {
-    0% { transform: rotate(45deg) translateY(-100%); }
-    100% { transform: rotate(45deg) translateY(100%); }
+    0% {
+        transform: rotate(45deg) translateY(-100%);
+    }
+
+    100% {
+        transform: rotate(45deg) translateY(100%);
+    }
 }
 
 .member-avatar {
@@ -548,10 +643,8 @@ section {
     height: 80px;
     margin: 0 auto 20px;
     background: var(--primary-color);
-    clip-path: polygon(
-        25% 0%, 75% 0%, 100% 25%, 100% 75%, 
-        75% 100%, 25% 100%, 0% 75%, 0% 25%
-    );
+    clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%,
+            75% 100%, 25% 100%, 0% 75%, 0% 25%);
 }
 
 .member-name {
@@ -860,14 +953,24 @@ section {
 }
 
 @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* ===== Animations ===== */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeInUp {
@@ -875,6 +978,7 @@ section {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
