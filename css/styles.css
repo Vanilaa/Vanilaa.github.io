@@ -12773,3 +12773,25 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+
+/* Project Card Hover Effect */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  /* Moves the card up slightly */
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+  /* Increases shadow intensity */
+}
+
+/* Optional: Ensure text colors inside the link don't get messy */
+.project-card h3 {
+  transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+  color: #bd5d38 !important;
+  /* Changes title color on hover (using your theme's orange) */
+}
